@@ -22,7 +22,7 @@ docker container run -d --name mysqldb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=passw
 
 + -d (讓服務背景執行)
 
-+ --name mysqldb (將 image 名稱設為 mysqldb)
++ --name mysqldb (將 container 名稱設為 mysqldb)
 
 + -p 3306:3306 (將本機 3306 與 image 中的 3306 端口做對接，3306 為 mysql 預設的服務端口)
 
@@ -51,6 +51,18 @@ https://hub.docker.com/r/phpmyadmin/phpmyadmin/
 ```
 docker run --name PMA -d --link mysqldb:db -p 8080:80 phpmyadmin/phpmyadmin
 ```
+
+以上指令參數解說：
+
++ -d (讓服務背景執行)
+
++ --name PMA (將 container 名稱設為 PMA)
+
++ --link mysqldb:db (欲連結之 mysql image)
+
++ -p 8080:80 (將本機 8080 與 image 中的 80 端口做對接，80 為 phpmyadmin 預設的服務端口)
+
++ phpmyadmin/phpmyadmin (使用 phpmyadmin image)
 
 接著開啟 [http://localhost:8080](http://localhost:8080)
 
