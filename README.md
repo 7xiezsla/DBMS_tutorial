@@ -41,4 +41,21 @@ CONTAINER ID   IMAGE                                        COMMAND             
 
 如果顯示如上，表示已經成功安裝 mysql，並且已經成功啟動。
 
+## phpMyAdmin
 
+詳見 docker 官網上的 mysql image 解說
+https://hub.docker.com/r/phpmyadmin/phpmyadmin/
+
+於終端機(macOS: terminal, windowsOS: cmd, 命令提示字元)中輸入以下指令將 image 下載下來並執行
+
+```
+docker run --name PMA -d --link mysqldb:db -p 8080:80 phpmyadmin/phpmyadmin
+```
+
+接著開啟 [http://localhost:8080](http://localhost:8080)
+
+可以看到資料庫管理系統登入介面(與前方資料庫帳密設定一致)
+
+帳號：root
+
+密碼：password
